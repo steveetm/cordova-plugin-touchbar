@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-touchbar",
+  "version": "0.0.1",
+  "description": "Cordova plugin to access TouchBar from OSX platform",
+  "cordova": {
+    "id": "cordova-plugin-touchbar",
+    "platforms": [
+      "osx"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steveetm/cordova-plugin-touchbar.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-osx"
+  ],
+  "author": "Istvan Tabanyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steveetm/cordova-plugin-touchbar/issues"
+  },
+  "homepage": "https://github.com/steveetm/cordova-plugin-touchbar#readme"
+}

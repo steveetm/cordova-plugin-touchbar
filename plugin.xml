@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-touchbar"
+    version="0.0.1">
+    <name>Cordova Plugin Touchbar</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/steveetm/cordova-plugin-touchbar.git</repo>
+    <issue>https://github.com/steveetm/cordova-plugin-touchbar/issues</issue>
+
+    <platform name="osx">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="TouchBarPlugin" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="TouchBarPlugin">
+                <param name="ios-package" value="TouchBarPlugin" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/TouchBarPlugin.h" />
+        <source-file src="src/ios/TouchBarPlugin.m" />
+        <header-file src="src/ios/MainViewController+TouchBarPluginMainViewController.h" />
+        <source-file src="src/ios/MainViewController+TouchBarPluginMainViewController.m" />
+    </platform>
+
+</plugin>
