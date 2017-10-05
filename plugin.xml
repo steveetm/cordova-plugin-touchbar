@@ -15,6 +15,14 @@
             <runs/>
             <clobbers target="TouchBarPlugin" />
         </js-module>
+        <js-module src="www/identifiers.js" name="identifiers">
+            <runs/>
+            <clobbers target="identifiers" />
+        </js-module>
+        <js-module src="www/errors.js" name="errors">
+            <runs/>
+            <clobbers target="errors" />
+        </js-module>
         <config-file target="config.xml" parent="/*">
             <feature name="TouchBarPlugin">
                 <param name="ios-package" value="TouchBarPlugin" onload="true" />

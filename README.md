@@ -9,23 +9,25 @@ to learn Objective-c and Cordova plugin development.
 #Example
 
 ```
-TouchBarPlugin.defineTouchBarItems([
-{
-    type:'NSButton',
-    title:'Button title',
-    identifier:'very.unique.identifier',
-    onTap: ()=>console.log('Button tapped')
-},
-{
-    type: 'NSSlider',
-    identifier:'very.unique.slider.identifier'
-}
-]);
-
-TouchBarPlugin.setDefaultItemIdentifiers([
-    'very.unique.identifier',
-    TouchBarPlugin.identifiers.fixedSpaceLarge,
-    'very.unique.slider.identifier',
-    TouchBarPlugin.identifiers.otherItemsProxy
-]);
+TouchBar.defineTouchBarItems([{
+            type: "NSButton",
+            image: TouchBarPlugin.identifiers.images.NSImageNameTouchBarBookmarksTemplate,
+            title: 'Title',
+            identifier: 'Button1'
+        }, {
+            type: "NSSlider",
+            title: "",
+            identifier: 'Slider',
+            minValue: 0,
+            maxValue: 100,
+        }])
+        .then(() => {
+            TouchBar.setDefaultItemIdentifiers(['Button1', 'Slider', TouchBarPlugin.identifiers.elements.otherItemsProxy]);
+            TouchBar.on('Button1', 'tap', () => {
+                alert('tapped')
+            });
+            TouchBar.on('Slider', 'change', function (newValue) {
+                console.log(newValue)
+            })
+        });
 ```
